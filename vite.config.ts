@@ -3,15 +3,24 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/visionboard-atelier/',  // Ersetze REPO-NAME mit deinem GitHub Repo-Namen!
+  // WICHTIG: bei Vercel meistens "/" statt Repo-Name
+  base: '/',
+
+  plugins: [react()],
+
   server: {
     port: 3000,
     host: '0.0.0.0',
   },
-  plugins: [react()],
+
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
-    }
-  }
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+  },
 });
