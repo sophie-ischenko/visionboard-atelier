@@ -5,15 +5,26 @@
    ======================================== */
 
 @theme {
-  /* Custom Brand Colors */
-  --color-primary-orange: #CE7200;
-  --color-rust-red: #B7410E;
-  --color-light-orange: #FFC682;
-  --color-cream: #FFF7D3;
-  --color-dark-brown: #804100;
+  /* Brand Colors */
+  --color-primary-teal: #1E3C42;
+  --color-primary-plum: #733843;
+  --color-primary-tan: #B48469;
+
+  /* Derived Surfaces */
+  --color-cream: #F7F1EC;
+  --color-surface: #F1E8E2;
+  --color-surface-alt: #E7DDD6;
+  --color-surface-muted: #DDD1C8;
+
+  /* Text / Ink */
   --color-text-dark: #1F1400;
-  --color-text-accent: #FDF9F5;
-  
+  --color-text-mid: #4E4A45;
+  --color-text-accent: #FFFFFF;
+
+  /* Supporting Neutrals */
+  --color-line: rgba(30, 60, 66, 0.14);
+  --color-shadow-rgb: 30 60 66;
+
   /* Font Families */
   --font-family-sans: 'Inter', system-ui, sans-serif;
   --font-family-mono: 'IBM Plex Mono', monospace;
@@ -24,33 +35,43 @@
    CUSTOM UTILITY CLASSES
    ======================================== */
 
-/* Mono font utility */
-.font-mono {
-  font-family: var(--font-family-mono);
-}
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-family-mono);
+  }
 
-/* Serif font utility */
-.font-serif {
-  font-family: var(--font-family-serif);
-}
+  .font-serif {
+    font-family: var(--font-family-serif);
+  }
 
-/* Custom Cursors */
-.cursor-grab {
-  cursor: grab;
-}
+  .cursor-grab {
+    cursor: grab;
+  }
 
-.cursor-grabbing {
-  cursor: grabbing;
-}
+  .cursor-grabbing {
+    cursor: grabbing;
+  }
 
-/* ========================================
-   CUSTOM SCROLLBAR
-   ======================================== */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-/* Hide scrollbar */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 8px 24px rgba(var(--color-shadow-rgb), 0.08);
+  }
+
+  .border-line {
+    border-color: var(--color-line);
+  }
 }
 
 /* ========================================
@@ -73,11 +94,11 @@ h1, h2, h3, h4 {
 
 /* Selection color */
 ::selection {
-  background-color: var(--color-light-orange);
+  background-color: rgba(180, 132, 105, 0.28);
   color: var(--color-text-dark);
 }
 
 ::-moz-selection {
-  background-color: var(--color-light-orange);
+  background-color: rgba(180, 132, 105, 0.28);
   color: var(--color-text-dark);
 }
