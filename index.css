@@ -1,57 +1,39 @@
 @import "tailwindcss";
 
 /* ========================================
-   TAILWIND THEME
+   GLOBAL STYLES
    ======================================== */
 
-@theme {
-  /* Brand Colors */
-  --color-primary-teal: #1E3C42;
-  --color-primary-plum: #733843;
-  --color-primary-tan: #B48469;
+html {
+  scroll-behavior: smooth;
+}
 
-  /* Derived Surfaces */
-  --color-cream: #F7F1EC;
-  --color-surface: #F1E8E2;
-  --color-surface-alt: #E7DDD6;
-  --color-surface-muted: #DDD1C8;
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #F7F1EC;
+  color: #1F1400;
+}
 
-  /* Text / Ink */
-  --color-text-dark: #1F1400;
-  --color-text-mid: #4E4A45;
-  --color-text-accent: #FFFFFF;
+h1, h2, h3, h4 {
+  font-family: Georgia, serif;
+}
 
-  /* Supporting Neutrals */
-  --color-line: rgba(30, 60, 66, 0.14);
-  --color-shadow-rgb: 30 60 66;
+/* Selection */
+::selection {
+  background-color: rgba(180, 132, 105, 0.28);
+  color: #1F1400;
+}
 
-  /* Font Families */
-  --font-family-sans: 'Inter', system-ui, sans-serif;
-  --font-family-mono: 'IBM Plex Mono', monospace;
-  --font-family-serif: Georgia, serif;
+::-moz-selection {
+  background-color: rgba(180, 132, 105, 0.28);
+  color: #1F1400;
 }
 
 /* ========================================
-   CUSTOM UTILITY CLASSES
+   CUSTOM UTILITIES
    ======================================== */
 
 @layer utilities {
-  .font-mono {
-    font-family: var(--font-family-mono);
-  }
-
-  .font-serif {
-    font-family: var(--font-family-serif);
-  }
-
-  .cursor-grab {
-    cursor: grab;
-  }
-
-  .cursor-grabbing {
-    cursor: grabbing;
-  }
-
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -66,39 +48,14 @@
   }
 
   .shadow-soft {
-    box-shadow: 0 8px 24px rgba(var(--color-shadow-rgb), 0.08);
+    box-shadow: 0 8px 24px rgba(30, 60, 66, 0.08);
   }
 
-  .border-line {
-    border-color: var(--color-line);
+  .cursor-grab {
+    cursor: grab;
   }
-}
 
-/* ========================================
-   GLOBAL STYLES
-   ======================================== */
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-family-sans);
-  background-color: var(--color-cream);
-  color: var(--color-text-dark);
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-family-serif);
-}
-
-/* Selection color */
-::selection {
-  background-color: rgba(180, 132, 105, 0.28);
-  color: var(--color-text-dark);
-}
-
-::-moz-selection {
-  background-color: rgba(180, 132, 105, 0.28);
-  color: var(--color-text-dark);
+  .cursor-grabbing {
+    cursor: grabbing;
+  }
 }
